@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testcluster-17c4"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testcluster-17c4"
+  template:
+    metadata:
+      labels:
+        app: "testcluster-17c4"
+    spec:
+      containers:
+        - name: "testcluster-17c4"
+          image: "mtcblrshowcases.azurecr.io/testcluster"
+          ports:
+          - containerPort: 80
